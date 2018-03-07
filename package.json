@@ -1,0 +1,24 @@
+{
+  "name": "@staqlabs/transforms",
+  "version": "0.0.1",
+  "description": "Transform utilities",
+  "main": "lib/index.js",
+  "repository": "git@github.com:staqlabs/transforms.git",
+  "author": "StaqLabs, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.2",
+    "standard-version": "^4.3.0"
+  },
+  "scripts": {
+    "prepublish": "BABEL_DISABLE_CACHE=1 babel ./src --ignore test --out-dir ./lib --copy-files",
+    "test": "mocha --require babel-core/register --require babel-polyfill --reporter spec \"test/index.js\"",
+    "release": "standard-version"
+  }
+}
